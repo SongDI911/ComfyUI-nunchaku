@@ -88,7 +88,7 @@ class ComfyFluxWrapper(nn.Module):
                     model.comfy_lora_meta_list[i] = meta
                 lora_to_be_composed.append(({k: v for k, v in model.comfy_lora_sd_list[i].items()}, meta[1]))
 
-            composed_lora = compose_lora(lora_to_be_composed)
+            composed_lora = compose_lora(lora_to_be_composed, del_filter_prefixs=["lora_unet_img_in", "lora_unet_txt_in"])
 
             if len(composed_lora) == 0:
                 model.reset_lora()
