@@ -67,7 +67,7 @@ class NunchakuFluxLoraLoader:
         lora_path = folder_paths.get_full_path_or_raise("loras", lora_name)
         ret_model_wrapper.loras.append((lora_path, lora_strength))
 
-        sd = to_diffusers(lora_path, del_filter_prefixs=["lora_unet_img_in", "lora_unet_txt_in"])
+        sd = to_diffusers(lora_path)
 
         if "transformer.x_embedder.lora_A.weight" in sd:
             new_in_channels = sd["transformer.x_embedder.lora_A.weight"].shape[1]
