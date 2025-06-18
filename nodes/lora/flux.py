@@ -3,8 +3,8 @@ import logging
 
 import folder_paths
 
-from nunchaku.lora.flux import to_diffusers
-
+#from nunchaku.lora.flux import to_diffusers
+from ...wrappers.flux import to_diffusers
 from ...wrappers.flux import ComfyFluxWrapper
 
 logging.basicConfig(level=logging.INFO)
